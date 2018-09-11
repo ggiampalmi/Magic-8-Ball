@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,61 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image8ball" translatesAutoresizingMaskIntoConstraints="NO" id="OYI-rh-1mo">
+                                <rect key="frame" x="58" y="20" width="259" height="233"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMy-4D-YUC">
+                                <rect key="frame" x="58" y="325" width="259" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="Xll-pz-0y8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLl-Ix-Z3n">
+                                <rect key="frame" x="63" y="261" width="249" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="0zG-lk-9Oh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Answer my 'Yes'/'No' Question"/>
+                                <connections>
+                                    <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2g4-46-PwI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kLl-Ix-Z3n" secondAttribute="trailing" constant="63" id="2uy-GL-WWi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OMy-4D-YUC" secondAttribute="trailing" constant="58" id="Cch-FL-YBj"/>
+                            <constraint firstItem="OMy-4D-YUC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="FG9-7r-EzP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OYI-rh-1mo" secondAttribute="trailing" constant="58" id="FNA-gD-QcU"/>
+                            <constraint firstItem="OMy-4D-YUC" firstAttribute="top" secondItem="kLl-Ix-Z3n" secondAttribute="bottom" constant="27" id="Fwb-EX-4Ne"/>
+                            <constraint firstItem="OYI-rh-1mo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="GLR-Ff-iK6"/>
+                            <constraint firstItem="kLl-Ix-Z3n" firstAttribute="top" secondItem="OYI-rh-1mo" secondAttribute="bottom" constant="8" id="GNt-gU-5DH"/>
+                            <constraint firstItem="kLl-Ix-Z3n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="63" id="Gyh-Vf-M8t"/>
+                            <constraint firstItem="OYI-rh-1mo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Oy5-5h-A1B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OMy-4D-YUC" secondAttribute="bottom" constant="291" id="riC-T1-mkl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="eightBallImage" destination="OYI-rh-1mo" id="2lS-YC-gfi"/>
+                        <outlet property="resultLabel" destination="OMy-4D-YUC" id="Yuk-0S-Z0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="124.58770614692655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image8ball" width="300" height="300"/>
+    </resources>
 </document>
